@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18466ED029F1704700EC4012 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18466ECF29F1704700EC4012 /* HomeView.swift */; };
 		186E1D9129F0FD2E00F89DC8 /* MoodilityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E1D9029F0FD2E00F89DC8 /* MoodilityApp.swift */; };
 		186E1D9329F0FD2E00F89DC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E1D9229F0FD2E00F89DC8 /* ContentView.swift */; };
 		186E1D9529F0FD3000F89DC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186E1D9429F0FD3000F89DC8 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18466ECF29F1704700EC4012 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		186E1D8D29F0FD2E00F89DC8 /* Moodility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moodility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186E1D9029F0FD2E00F89DC8 /* MoodilityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodilityApp.swift; sourceTree = "<group>"; };
 		186E1D9229F0FD2E00F89DC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +38,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18466ED129F1704F00EC4012 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				18466ECF29F1704700EC4012 /* HomeView.swift */,
+				186E1D9229F0FD2E00F89DC8 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		186E1D8429F0FD2D00F89DC8 = {
 			isa = PBXGroup;
 			children = (
@@ -55,8 +66,8 @@
 		186E1D8F29F0FD2E00F89DC8 /* Moodility */ = {
 			isa = PBXGroup;
 			children = (
+				18466ED129F1704F00EC4012 /* Views */,
 				186E1D9029F0FD2E00F89DC8 /* MoodilityApp.swift */,
-				186E1D9229F0FD2E00F89DC8 /* ContentView.swift */,
 				186E1DCB29F1292F00F89DC8 /* Bookworn.xcdatamodeld */,
 				186E1DC429F1204800F89DC8 /* DataController.swift */,
 				186E1D9429F0FD3000F89DC8 /* Assets.xcassets */,
@@ -146,6 +157,7 @@
 				186E1D9329F0FD2E00F89DC8 /* ContentView.swift in Sources */,
 				186E1DC529F1204800F89DC8 /* DataController.swift in Sources */,
 				186E1DCD29F1292F00F89DC8 /* Bookworn.xcdatamodeld in Sources */,
+				18466ED029F1704700EC4012 /* HomeView.swift in Sources */,
 				186E1D9129F0FD2E00F89DC8 /* MoodilityApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
