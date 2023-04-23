@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  TabsView.swift
 //  Moodility
 //
 //  Created by Muhammad Suleman on 4/20/23.
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct TabsView: View {
     var body: some View {
         TabView {
             
-            ContentView()
+            MoodsView()
                 .tabItem {
                     Label {
                         Text("Moods")
@@ -20,21 +20,12 @@ struct HomeView: View {
                     }
                 }
             
-            Text("Hello")
+            Text("Coming Soon")
                 .tabItem {
                     Label {
-                        Text("Moods")
+                        Text("Stats")
                     } icon: {
-                        Image(systemName: "house")
-                    }
-                }
-            
-            Text("Hello")
-                .tabItem {
-                    Label {
-                        Text("Moods")
-                    } icon: {
-                        Image(systemName: "house")
+                        Image(systemName: "chart.bar.fill")
                     }
                 }
         }
@@ -43,6 +34,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        TabsView()
     }
 }

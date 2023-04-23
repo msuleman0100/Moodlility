@@ -1,16 +1,16 @@
 //
-//  PersistenceVM.swift
+//  DataManagerVM.swift
 //  Moodility
 //
-//  Created by Muhammad Suleman on 4/20/23.
+//  Created by Muhammad Suleman on 4/21/23.
 //
 
 import CoreData
 import Foundation
 
-final class DataController: ObservableObject {
+final class PersistenceVM: ObservableObject {
     
-    let container = NSPersistentContainer(name: "Bookworn")
+    let container = NSPersistentContainer(name: "MoodsModel")
     
     init()  {
         container.loadPersistentStores { description, error in
@@ -18,8 +18,8 @@ final class DataController: ObservableObject {
                 print("Core data failed to load: \(error.localizedDescription)")
             }
         }
+        
+        self.container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
     }
-    
-    
     
 }

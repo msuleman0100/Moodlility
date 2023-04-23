@@ -7,24 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18466ED029F1704700EC4012 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18466ECF29F1704700EC4012 /* HomeView.swift */; };
+		183B734A29F4FFAE00EA39CF /* Mood+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B734629F4FFAE00EA39CF /* Mood+CoreDataClass.swift */; };
+		183B734B29F4FFAE00EA39CF /* Mood+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B734729F4FFAE00EA39CF /* Mood+CoreDataProperties.swift */; };
+		183B734C29F4FFAE00EA39CF /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B734829F4FFAE00EA39CF /* User+CoreDataClass.swift */; };
+		183B734D29F4FFAE00EA39CF /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B734929F4FFAE00EA39CF /* User+CoreDataProperties.swift */; };
+		18466ED029F1704700EC4012 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18466ECF29F1704700EC4012 /* TabsView.swift */; };
 		186E1D9129F0FD2E00F89DC8 /* MoodilityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E1D9029F0FD2E00F89DC8 /* MoodilityApp.swift */; };
-		186E1D9329F0FD2E00F89DC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E1D9229F0FD2E00F89DC8 /* ContentView.swift */; };
+		186E1D9329F0FD2E00F89DC8 /* MoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E1D9229F0FD2E00F89DC8 /* MoodsView.swift */; };
 		186E1D9529F0FD3000F89DC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186E1D9429F0FD3000F89DC8 /* Assets.xcassets */; };
 		186E1D9829F0FD3000F89DC8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186E1D9729F0FD3000F89DC8 /* Preview Assets.xcassets */; };
-		186E1DC529F1204800F89DC8 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E1DC429F1204800F89DC8 /* DataController.swift */; };
-		186E1DCD29F1292F00F89DC8 /* Bookworn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 186E1DCB29F1292F00F89DC8 /* Bookworn.xcdatamodeld */; };
+		186E1DCD29F1292F00F89DC8 /* MoodsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 186E1DCB29F1292F00F89DC8 /* MoodsModel.xcdatamodeld */; };
+		18AD61DF29F27728007B47AD /* DataManagerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AD61DE29F27728007B47AD /* DataManagerVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		18466ECF29F1704700EC4012 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		183B734629F4FFAE00EA39CF /* Mood+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mood+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		183B734729F4FFAE00EA39CF /* Mood+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mood+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		183B734829F4FFAE00EA39CF /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		183B734929F4FFAE00EA39CF /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		18466ECF29F1704700EC4012 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
 		186E1D8D29F0FD2E00F89DC8 /* Moodility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moodility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186E1D9029F0FD2E00F89DC8 /* MoodilityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodilityApp.swift; sourceTree = "<group>"; };
-		186E1D9229F0FD2E00F89DC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		186E1D9229F0FD2E00F89DC8 /* MoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodsView.swift; sourceTree = "<group>"; };
 		186E1D9429F0FD3000F89DC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		186E1D9729F0FD3000F89DC8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		186E1DC429F1204800F89DC8 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		186E1DCC29F1292F00F89DC8 /* Bookworn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bookworn.xcdatamodel; sourceTree = "<group>"; };
+		18AD61DE29F27728007B47AD /* DataManagerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,8 +49,8 @@
 		18466ED129F1704F00EC4012 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				18466ECF29F1704700EC4012 /* HomeView.swift */,
-				186E1D9229F0FD2E00F89DC8 /* ContentView.swift */,
+				18466ECF29F1704700EC4012 /* TabsView.swift */,
+				186E1D9229F0FD2E00F89DC8 /* MoodsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -66,10 +74,10 @@
 		186E1D8F29F0FD2E00F89DC8 /* Moodility */ = {
 			isa = PBXGroup;
 			children = (
+				18AD61E029F278F3007B47AD /* Models */,
 				18466ED129F1704F00EC4012 /* Views */,
+				18AD61DD29F2768E007B47AD /* ViewModels */,
 				186E1D9029F0FD2E00F89DC8 /* MoodilityApp.swift */,
-				186E1DCB29F1292F00F89DC8 /* Bookworn.xcdatamodeld */,
-				186E1DC429F1204800F89DC8 /* DataController.swift */,
 				186E1D9429F0FD3000F89DC8 /* Assets.xcassets */,
 				186E1D9629F0FD3000F89DC8 /* Preview Content */,
 			);
@@ -82,6 +90,26 @@
 				186E1D9729F0FD3000F89DC8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		18AD61DD29F2768E007B47AD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				18AD61DE29F27728007B47AD /* DataManagerVM.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		18AD61E029F278F3007B47AD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				183B734629F4FFAE00EA39CF /* Mood+CoreDataClass.swift */,
+				183B734729F4FFAE00EA39CF /* Mood+CoreDataProperties.swift */,
+				183B734829F4FFAE00EA39CF /* User+CoreDataClass.swift */,
+				183B734929F4FFAE00EA39CF /* User+CoreDataProperties.swift */,
+				186E1DCB29F1292F00F89DC8 /* MoodsModel.xcdatamodeld */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,11 +182,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				186E1D9329F0FD2E00F89DC8 /* ContentView.swift in Sources */,
-				186E1DC529F1204800F89DC8 /* DataController.swift in Sources */,
-				186E1DCD29F1292F00F89DC8 /* Bookworn.xcdatamodeld in Sources */,
-				18466ED029F1704700EC4012 /* HomeView.swift in Sources */,
+				186E1D9329F0FD2E00F89DC8 /* MoodsView.swift in Sources */,
+				18AD61DF29F27728007B47AD /* DataManagerVM.swift in Sources */,
+				186E1DCD29F1292F00F89DC8 /* MoodsModel.xcdatamodeld in Sources */,
+				18466ED029F1704700EC4012 /* TabsView.swift in Sources */,
+				183B734A29F4FFAE00EA39CF /* Mood+CoreDataClass.swift in Sources */,
 				186E1D9129F0FD2E00F89DC8 /* MoodilityApp.swift in Sources */,
+				183B734C29F4FFAE00EA39CF /* User+CoreDataClass.swift in Sources */,
+				183B734B29F4FFAE00EA39CF /* Mood+CoreDataProperties.swift in Sources */,
+				183B734D29F4FFAE00EA39CF /* User+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,13 +393,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		186E1DCB29F1292F00F89DC8 /* Bookworn.xcdatamodeld */ = {
+		186E1DCB29F1292F00F89DC8 /* MoodsModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				186E1DCC29F1292F00F89DC8 /* Bookworn.xcdatamodel */,
 			);
 			currentVersion = 186E1DCC29F1292F00F89DC8 /* Bookworn.xcdatamodel */;
-			path = Bookworn.xcdatamodeld;
+			path = MoodsModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

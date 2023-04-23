@@ -10,13 +10,12 @@ import SwiftUI
 @main
 struct MoodilityApp: App {
     
-    @StateObject private var dataController = DataController()
+    @StateObject private var dataController = PersistenceVM()
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabsView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
-            
         }
     }
 }
