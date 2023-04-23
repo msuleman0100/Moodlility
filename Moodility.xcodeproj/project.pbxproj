@@ -12,8 +12,9 @@
 		183B734C29F4FFAE00EA39CF /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B734829F4FFAE00EA39CF /* User+CoreDataClass.swift */; };
 		183B734D29F4FFAE00EA39CF /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B734929F4FFAE00EA39CF /* User+CoreDataProperties.swift */; };
 		18466ED029F1704700EC4012 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18466ECF29F1704700EC4012 /* TabsView.swift */; };
-		185A3FDB29F544F900978B49 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A3FDA29F544F900978B49 /* AuthView.swift */; };
+		185A3FDB29F544F900978B49 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A3FDA29F544F900978B49 /* LoginView.swift */; };
 		185A3FDD29F551A400978B49 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A3FDC29F551A400978B49 /* AccountView.swift */; };
+		185A3FDF29F55BC200978B49 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A3FDE29F55BC200978B49 /* RegisterView.swift */; };
 		186E1D9129F0FD2E00F89DC8 /* MoodilityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E1D9029F0FD2E00F89DC8 /* MoodilityApp.swift */; };
 		186E1D9329F0FD2E00F89DC8 /* MoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E1D9229F0FD2E00F89DC8 /* MoodsView.swift */; };
 		186E1D9529F0FD3000F89DC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186E1D9429F0FD3000F89DC8 /* Assets.xcassets */; };
@@ -28,8 +29,9 @@
 		183B734829F4FFAE00EA39CF /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		183B734929F4FFAE00EA39CF /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		18466ECF29F1704700EC4012 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
-		185A3FDA29F544F900978B49 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		185A3FDA29F544F900978B49 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		185A3FDC29F551A400978B49 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		185A3FDE29F55BC200978B49 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		186E1D8D29F0FD2E00F89DC8 /* Moodility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moodility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186E1D9029F0FD2E00F89DC8 /* MoodilityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodilityApp.swift; sourceTree = "<group>"; };
 		186E1D9229F0FD2E00F89DC8 /* MoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodsView.swift; sourceTree = "<group>"; };
@@ -53,7 +55,8 @@
 		18466ED129F1704F00EC4012 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				185A3FDA29F544F900978B49 /* AuthView.swift */,
+				185A3FDA29F544F900978B49 /* LoginView.swift */,
+				185A3FDE29F55BC200978B49 /* RegisterView.swift */,
 				186E1D9229F0FD2E00F89DC8 /* MoodsView.swift */,
 				185A3FDC29F551A400978B49 /* AccountView.swift */,
 				18466ECF29F1704700EC4012 /* TabsView.swift */,
@@ -195,8 +198,9 @@
 				185A3FDD29F551A400978B49 /* AccountView.swift in Sources */,
 				183B734A29F4FFAE00EA39CF /* Mood+CoreDataClass.swift in Sources */,
 				186E1D9129F0FD2E00F89DC8 /* MoodilityApp.swift in Sources */,
-				185A3FDB29F544F900978B49 /* AuthView.swift in Sources */,
+				185A3FDB29F544F900978B49 /* LoginView.swift in Sources */,
 				183B734C29F4FFAE00EA39CF /* User+CoreDataClass.swift in Sources */,
+				185A3FDF29F55BC200978B49 /* RegisterView.swift in Sources */,
 				183B734B29F4FFAE00EA39CF /* Mood+CoreDataProperties.swift in Sources */,
 				183B734D29F4FFAE00EA39CF /* User+CoreDataProperties.swift in Sources */,
 			);

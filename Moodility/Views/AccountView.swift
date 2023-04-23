@@ -26,7 +26,7 @@ struct AccountView: View {
                 
                 Spacer()
                 Spacer()
-                NavigationLink("", destination: AuthView()
+                NavigationLink("", destination: LoginView()
                     .navigationBarBackButtonHidden(true),
                                isActive: $moveToAuthView)
                 Button(action: {
