@@ -15,14 +15,17 @@ struct MoodsView: View {
     let devWidth = UIScreen.main.bounds.width
     @State var showPopup = false
     @Environment(\.managedObjectContext) var moc
+    @State var loggedInUsername = UserDefaults.standard.string(forKey: "loggedInUsername")
     @FetchRequest(
            sortDescriptors: [
             NSSortDescriptor(keyPath: \Mood.date, ascending: false)
-           ],
-           predicate: NSPredicate(format: "user.username == %@", "suleman0100")
+           ]
+//           ,
+//           predicate: NSPredicate(format: "user.username == %@", "suleman0100")
        ) private var moods: FetchedResults<Mood>
     
     var body: some View {
+        
         ZStack(alignment: .top) {
             VStack(alignment: .leading) {
                 
@@ -81,6 +84,7 @@ struct MoodsView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             .background(Color.black.opacity(0.03))
+            .foregroundColor(.black)
             
             if showPopup {
                 Text("**Today's Mood Has Already Added**")
@@ -91,7 +95,7 @@ struct MoodsView: View {
             }
             
         }
-        
+      
     }
     
     //For Saving New Mood
@@ -121,7 +125,7 @@ struct MoodsView: View {
                 newMood.mood = mood
                 newMood.date = date
                 newMood.user = User(context: moc)
-                newMood.user?.username = "suleman0100"
+                newMood.user?.username = loggedInUsername ?? "Unknown"
                 newMood.user?.displayName = "Muhammad Suleman"
                 do {
                     try moc.save()

@@ -11,7 +11,6 @@ import Foundation
 final class PersistenceVM: ObservableObject {
     
     let container = NSPersistentContainer(name: "MoodsModel")
-    
     init()  {
         container.loadPersistentStores { description, error in
             if let error = error {

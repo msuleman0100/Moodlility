@@ -14,6 +14,7 @@ struct MoodilityApp: App {
     
     var body: some Scene {
         WindowGroup {
+//            AuthView()
             TabsView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
         }

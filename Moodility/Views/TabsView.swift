@@ -9,25 +9,40 @@ import SwiftUI
 
 struct TabsView: View {
     var body: some View {
-        TabView {
+        
+        NavigationView {
             
-            MoodsView()
-                .tabItem {
-                    Label {
-                        Text("Moods")
-                    } icon: {
-                        Image(systemName: "house")
+            TabView {
+                MoodsView()
+                    .tabItem {
+                        Label {
+                            Text("Moods")
+                        } icon: {
+                            Image(systemName: "house")
+                        }
                     }
-                }
+                
+                Text("Coming Soon")
+                    .tabItem {
+                        Label {
+                            Text("Stats")
+                        } icon: {
+                            Image(systemName: "chart.bar.fill")
+                        }
+                    }
+                
+                AccountView()
+                    .tabItem {
+                        Label {
+                            Text("Account")
+                        } icon: {
+                            Image(systemName: "person.fill")
+                        }
+                    }
+                
+                    .navigationBarHidden(true)
+            }
             
-            Text("Coming Soon")
-                .tabItem {
-                    Label {
-                        Text("Stats")
-                    } icon: {
-                        Image(systemName: "chart.bar.fill")
-                    }
-                }
         }
     }
 }
