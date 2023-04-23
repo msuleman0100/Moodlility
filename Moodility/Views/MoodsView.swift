@@ -15,7 +15,6 @@ struct MoodsView: View {
     let devWidth = UIScreen.main.bounds.width
     @State var showPopup = false
     @Environment(\.managedObjectContext) var moc
-    
     @FetchRequest(
            sortDescriptors: [
             NSSortDescriptor(keyPath: \Mood.date, ascending: false)
@@ -25,7 +24,6 @@ struct MoodsView: View {
     
     var body: some View {
         ZStack(alignment: .top) {
-            
             VStack(alignment: .leading) {
                 
                 //Moods
@@ -62,16 +60,13 @@ struct MoodsView: View {
                     Spacer()
                 }
                 
-                Divider()
-                    .padding(.top, 32)
-                
+                Divider().padding(.top, 32)
                 
                 //Moods list...
                 Text("Recent Moods")
                     .font(.title)
                     .fontWeight(.medium)
                     .padding(.horizontal)
-                    
                 List(moods, id: \.self) { mood in
                     VStack(alignment: .leading, spacing: 10) {
                         Text("**\(mood.wrappedMood)**")
