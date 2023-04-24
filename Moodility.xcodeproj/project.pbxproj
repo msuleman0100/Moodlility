@@ -21,6 +21,8 @@
 		186E1D9829F0FD3000F89DC8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186E1D9729F0FD3000F89DC8 /* Preview Assets.xcassets */; };
 		186E1DCD29F1292F00F89DC8 /* MoodsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 186E1DCB29F1292F00F89DC8 /* MoodsModel.xcdatamodeld */; };
 		18AD61DF29F27728007B47AD /* PersistenceVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AD61DE29F27728007B47AD /* PersistenceVM.swift */; };
+		18CB7A9229F649E9003B3A73 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB7A9129F649E9003B3A73 /* StatsView.swift */; };
+		18CB7A9529F6522D003B3A73 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 18CB7A9429F6522D003B3A73 /* SwiftUICharts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,7 @@
 		186E1D9729F0FD3000F89DC8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		186E1DCC29F1292F00F89DC8 /* Bookworn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bookworn.xcdatamodel; sourceTree = "<group>"; };
 		18AD61DE29F27728007B47AD /* PersistenceVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceVM.swift; sourceTree = "<group>"; };
+		18CB7A9129F649E9003B3A73 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CB7A9529F6522D003B3A73 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +64,7 @@
 				186E1D9229F0FD2E00F89DC8 /* MoodsView.swift */,
 				185A3FDC29F551A400978B49 /* AccountView.swift */,
 				18466ECF29F1704700EC4012 /* TabsView.swift */,
+				18CB7A9129F649E9003B3A73 /* StatsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -137,6 +142,9 @@
 			dependencies = (
 			);
 			name = Moodility;
+			packageProductDependencies = (
+				18CB7A9429F6522D003B3A73 /* SwiftUICharts */,
+			);
 			productName = Moodility;
 			productReference = 186E1D8D29F0FD2E00F89DC8 /* Moodility.app */;
 			productType = "com.apple.product-type.application";
@@ -165,6 +173,9 @@
 				Base,
 			);
 			mainGroup = 186E1D8429F0FD2D00F89DC8;
+			packageReferences = (
+				18CB7A9329F6522D003B3A73 /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 186E1D8E29F0FD2E00F89DC8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -198,6 +209,7 @@
 				185A3FDD29F551A400978B49 /* AccountView.swift in Sources */,
 				183B734A29F4FFAE00EA39CF /* Mood+CoreDataClass.swift in Sources */,
 				186E1D9129F0FD2E00F89DC8 /* MoodilityApp.swift in Sources */,
+				18CB7A9229F649E9003B3A73 /* StatsView.swift in Sources */,
 				185A3FDB29F544F900978B49 /* LoginView.swift in Sources */,
 				183B734C29F4FFAE00EA39CF /* User+CoreDataClass.swift in Sources */,
 				185A3FDF29F55BC200978B49 /* RegisterView.swift in Sources */,
@@ -403,6 +415,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		18CB7A9329F6522D003B3A73 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		18CB7A9429F6522D003B3A73 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18CB7A9329F6522D003B3A73 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		186E1DCB29F1292F00F89DC8 /* MoodsModel.xcdatamodeld */ = {

@@ -97,12 +97,13 @@ struct MoodsView: View {
             }
             
         }
+        .padding(.bottom, 1)
         .onAppear() {
             fetchUserMoods()
             //UserDefaults.standard.set(false, forKey: "userExists")
         }
         
-        .toolbar(.hidden)
+        .toolbar(.hidden, for: .navigationBar)
     }
     
     func fetchUserMoods() {

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AccountView: View {
+    
+    @FetchRequest(sortDescriptors: []) private var users: FetchedResults<User>
     @State var moveToAuthView = false
     @State var username = UserDefaults.standard.string(forKey: "loggedInUsername")
     @State var displayName = UserDefaults.standard.string(forKey: "loggedInUserDisplayName")
@@ -17,8 +19,8 @@ struct AccountView: View {
             Spacer()
             Text(displayName ?? "Unknown")
                 .padding(.horizontal)
-                .font(.largeTitle)
-                .fontWeight(.black)
+                .font(.title)
+                .fontWeight(.bold)
             
             Text(username ?? "Unknown")
                 .padding(.horizontal)
@@ -47,8 +49,25 @@ struct AccountView: View {
             })
             Spacer()
         }
-        
+        .onAppear() {
+            searchUser()
+        }
     }
+    
+    func searchUser() {
+        for user in users {
+            print("Old username - " + (user.username?.lowercased() ?? "empty"))
+            print("entered - " + (user.username?.lowercased() ?? "empty"))
+            if let oldUsername = user.username {
+                if oldUsername.lowercased() == username!.lowercased() {
+                    displayName = "yes"
+                    displayName = user.displayName
+                    break
+                }
+            }
+        }
+    }
+    
 }
 
 struct AccountView_Previews: PreviewProvider {

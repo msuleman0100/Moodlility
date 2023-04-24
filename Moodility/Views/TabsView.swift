@@ -19,7 +19,7 @@ struct TabsView: View {
                         }
                     }
                 
-                Text("Coming Soon")
+                StatsView()
                     .tabItem {
                         Label {
                             Text("Stats")
@@ -36,9 +36,11 @@ struct TabsView: View {
                             Image(systemName: "person.fill")
                         }
                     }
+                
+//                    .toolbarBackground(.visible, for: .tabBar)
+//                    .toolbarBackground(Color.yellow,for: .tabBar)
+                    .toolbar(.hidden, for: .navigationBar)
             }
-            
-            .toolbar(.hidden)
     }
 }
 
