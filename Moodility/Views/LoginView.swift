@@ -15,7 +15,6 @@ struct LoginView: View {
     @State var moveToTabsView = false
     
     var body: some View {
-        NavigationView {
             VStack(alignment: .leading, spacing: 16) {
                 
                 Text("Find your stats by typing your username below..")
@@ -39,12 +38,14 @@ struct LoginView: View {
                     .foregroundColor(.black)
                
                 NavigationLink("", destination: TabsView()
-                    .navigationBarBackButtonHidden(true)
                     .navigationBarBackButtonHidden(true),
                                isActive: $moveToTabsView)
                
                 Button {
                     UserDefaults.standard.set(username, forKey: "loggedInUsername")
+                    UserDefaults.standard.set(true, forKey: "userExists")
+                    let username = UserDefaults.standard.string(forKey: "loggedInUsername")
+                    print("\nCurrent username - \(username ?? "ooo"))")
                     moveToTabsView.toggle()
                 } label: {
                     Text("Continue")
@@ -81,7 +82,6 @@ struct LoginView: View {
                 searchUser()
             }
             .navigationTitle("Login")
-        }
     }
     
     func searchUser() {

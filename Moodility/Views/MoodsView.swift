@@ -15,14 +15,8 @@ struct MoodsView: View {
     let devWidth = UIScreen.main.bounds.width
     @State var showPopup = false
     @Environment(\.managedObjectContext) var moc
-    @State var loggedInUsername = UserDefaults.standard.string(forKey: "loggedInUsername")
-    @FetchRequest(
-           sortDescriptors: [
-            NSSortDescriptor(keyPath: \Mood.date, ascending: false)
-           ]
-//           ,
-//           predicate: NSPredicate(format: "user.username == %@", "suleman0100")
-       ) private var moods: FetchedResults<Mood>
+    let loggedInUsername = UserDefaults.standard.string(forKey: "loggedInUsername")
+    @State var moods: [Mood] = []
     
     var body: some View {
         
@@ -71,6 +65,8 @@ struct MoodsView: View {
                     .fontWeight(.medium)
                     .padding(.horizontal)
                 List(moods, id: \.self) { mood in
+                    Text("**\(mood.user?.username ?? "okok")**")
+                        .font(.title3)
                     VStack(alignment: .leading, spacing: 10) {
                         Text("**\(mood.wrappedMood)**")
                             .font(.title3)
@@ -95,8 +91,30 @@ struct MoodsView: View {
             }
             
         }
-      
+        .onAppear() {
+            fetchUserMoods()
+            //UserDefaults.standard.set(false, forKey: "userExists")
+        }
     }
+    
+    func fetchUserMoods() {
+        if let user = loggedInUsername?.lowercased()  {
+            print("\nUser - \(user)\n")
+            let request = NSFetchRequest<Mood>(entityName: "Mood")
+            request.predicate = NSPredicate(format: "user.username == %@", "\(user)")
+            request.sortDescriptors = [NSSortDescriptor(keyPath: \Mood.date, ascending: false)]
+            do {
+                let moods = try moc.fetch(request)
+                self.moods = moods
+                print("\nMoods Found:\(self.moods)")
+            } catch {
+                print("Error while fetching moods on onAppear:\n\(error)")
+            }
+        } else {
+            print("User does not exists - \(loggedInUsername?.lowercased() ?? "empty")")
+        }
+    }
+    
     
     //For Saving New Mood
     func addMood(mood: String) {
@@ -106,15 +124,26 @@ struct MoodsView: View {
         let stringDate = formatter.string(from: Date())
         let date = formatter.date(from: stringDate)
         
+        guard let user = loggedInUsername else {
+            print("\nUsername not found here on addMood - \(loggedInUsername?.lowercased() ?? "empty")\n")
+            return
+        }
+        
         let request = NSFetchRequest<Mood>(entityName: "Mood")
+        request.predicate = NSPredicate(format: "user.username == %@", "\(user)")
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \Mood.date, ascending: false)]
+        
         do {
             
             let moods = try moc.fetch(request)
             
             var ifExists = false
             for mood in  moods {
-                if mood.date == date {
+                if mood.date == date && mood.user?.username ?? "" == user {
+                    print("\nUser - \(mood.user?.username)")
+                    print("Date - \(mood.date)")
                     ifExists = true
+                    break
                 }
             }
             
@@ -125,7 +154,7 @@ struct MoodsView: View {
                 newMood.mood = mood
                 newMood.date = date
                 newMood.user = User(context: moc)
-                newMood.user?.username = loggedInUsername ?? "Unknown"
+                newMood.user?.username = user
                 newMood.user?.displayName = "Muhammad Suleman"
                 do {
                     try moc.save()
@@ -133,7 +162,7 @@ struct MoodsView: View {
                     print("Error savnig mood: \(error)")
                 }
                 print("Justed Added Today's Mood.")
-                
+                fetchUserMoods()
             } else {
                  withAnimation { showPopup = true }
                  // Hide  popup after 2 seconds

@@ -56,9 +56,11 @@ struct RegisterView: View {
            
             Button {
                 UserDefaults.standard.set(username, forKey: "loggedInUsername")
+                UserDefaults.standard.set(displayName, forKey: "loggedInUserDisplayName")
+                UserDefaults.standard.set(true, forKey: "userExists")
                 moveToTabsView.toggle()
             } label: {
-                Text("Continue")
+                Text("Register")
                     .font(.title2)
                     .bold()
                     .padding()
@@ -87,7 +89,7 @@ struct RegisterView: View {
             }
 
             .navigationTitle("Register")
-
+            .navigationBarBackButtonHidden(true)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.orange)
