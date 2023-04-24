@@ -9,9 +9,6 @@ import SwiftUI
 
 struct TabsView: View {
     var body: some View {
-        
-        NavigationView {
-            
             TabView {
                 MoodsView()
                     .tabItem {
@@ -39,11 +36,9 @@ struct TabsView: View {
                             Image(systemName: "person.fill")
                         }
                     }
-                
-                    .navigationBarHidden(true)
             }
             
-        }
+            .toolbar(.hidden)
     }
 }
 

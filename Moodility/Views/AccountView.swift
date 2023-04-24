@@ -15,12 +15,12 @@ struct AccountView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Spacer()
-            Text(username ?? "Unknown")
+            Text(displayName ?? "Unknown")
                 .padding(.horizontal)
                 .font(.largeTitle)
                 .fontWeight(.black)
             
-            Text(displayName ?? "Unknown")
+            Text(username ?? "Unknown")
                 .padding(.horizontal)
                 .padding(.top, 1)
             

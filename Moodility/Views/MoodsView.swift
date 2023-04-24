@@ -64,17 +64,23 @@ struct MoodsView: View {
                     .font(.title)
                     .fontWeight(.medium)
                     .padding(.horizontal)
-                List(moods, id: \.self) { mood in
-                    Text("**\(mood.user?.username ?? "okok")**")
-                        .font(.title3)
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("**\(mood.wrappedMood)**")
-                            .font(.title3)
-                        Text(mood.wrappedDate)
-                            .opacity(0.9)
+                
+                ScrollView(showsIndicators: false) {
+                    ForEach(moods, id: \.self) { mood in
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("**\(mood.wrappedMood)**")
+                                .font(.title3)
+                            Text(mood.wrappedDate)
+                                .opacity(0.9)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(.white)
+                        .padding(10)
+                        .background(mood.wrappedMood == "Happy" ? Color.green:mood.wrappedMood == "Normal" ? Color.orange:Color.red)
+                        .cornerRadius(12)
+                        .padding(.horizontal)
+                        .padding(.top, 2)
                     }
-                    .foregroundColor(.white)
-                    .listRowBackground(mood.wrappedMood == "Happy" ? Color.green:mood.wrappedMood == "Normal" ? Color.orange:Color.red)
                 }
                 
             }
@@ -95,18 +101,36 @@ struct MoodsView: View {
             fetchUserMoods()
             //UserDefaults.standard.set(false, forKey: "userExists")
         }
+        
+        .toolbar(.hidden)
     }
     
     func fetchUserMoods() {
         if let user = loggedInUsername?.lowercased()  {
             print("\nUser - \(user)\n")
             let request = NSFetchRequest<Mood>(entityName: "Mood")
-            request.predicate = NSPredicate(format: "user.username == %@", "\(user)")
+//            request.predicate = NSPredicate(format: "user.username == %@", user)
             request.sortDescriptors = [NSSortDescriptor(keyPath: \Mood.date, ascending: false)]
             do {
                 let moods = try moc.fetch(request)
-                self.moods = moods
-                print("\nMoods Found:\(self.moods)")
+                if moods.isEmpty {
+                    print("\nMoods not found")
+                } else {
+                    print("\nMoods found and listed below...\n")
+                    withAnimation { self.moods.removeAll() }
+                    for mood in moods {
+                        if mood.user?.username!.lowercased() == user {
+                            self.moods.append(mood)
+                            print("\nFound\n" + (mood.user?.username ?? "ok"))
+                            print(user)
+                            print(mood.mood ?? "pl")
+                        } else {
+                            print("\nNot found\n" + (mood.user?.username ?? "ok"))
+                            print(user)
+                            print(mood.mood ?? "pl")
+                        }
+                    }
+                }
             } catch {
                 print("Error while fetching moods on onAppear:\n\(error)")
             }
@@ -130,8 +154,8 @@ struct MoodsView: View {
         }
         
         let request = NSFetchRequest<Mood>(entityName: "Mood")
-        request.predicate = NSPredicate(format: "user.username == %@", "\(user)")
-        request.sortDescriptors = [NSSortDescriptor(keyPath: \Mood.date, ascending: false)]
+//        request.predicate = NSPredicate(format: "user.username == %@", "\(user)")
+//        request.sortDescriptors = [NSSortDescriptor(keyPath: \Mood.date, ascending: false)]
         
         do {
             
@@ -139,13 +163,11 @@ struct MoodsView: View {
             
             var ifExists = false
             for mood in  moods {
-                if mood.date == date && mood.user?.username ?? "" == user {
-                    print("\nUser - \(mood.user?.username)")
-                    print("Date - \(mood.date)")
+                if mood.date == date && mood.user!.username!.lowercased() == user.lowercased() {
                     ifExists = true
-                    break
                 }
             }
+            
             
             if !ifExists {
                 
@@ -154,7 +176,7 @@ struct MoodsView: View {
                 newMood.mood = mood
                 newMood.date = date
                 newMood.user = User(context: moc)
-                newMood.user?.username = user
+                newMood.user?.username = user.lowercased()
                 newMood.user?.displayName = "Muhammad Suleman"
                 do {
                     try moc.save()
@@ -176,6 +198,15 @@ struct MoodsView: View {
             print("Error fetching mood: \(error)")
         }
         
+    }
+    
+    func deleteMood(_ newMood: Mood) {
+        for mood in moods {
+            if mood == newMood {
+                moc.delete(mood)
+                fetchUserMoods()
+            }
+        }
     }
     
     //Mood Updating Button - ViewBuilder

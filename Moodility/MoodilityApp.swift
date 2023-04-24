@@ -26,12 +26,10 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                if userExists {
-                    TabsView()
-                } else {
-                    LoginView()
-                }
+            if userExists {
+                TabsView()
+            } else {
+                LoginView()
             }
         }
     }

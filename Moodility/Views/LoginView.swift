@@ -86,10 +86,13 @@ struct LoginView: View {
     
     func searchUser() {
         for user in users {
+            print("Old username - " + (user.username?.lowercased() ?? "empty"))
+            print("entered - " + (user.username?.lowercased() ?? "empty"))
             if let oldUsername = user.username {
                 if oldUsername.lowercased() == username.lowercased() {
-                    withAnimation { userFound = true }
+                    withAnimation { userFound = true}
                     print("\nTrued...")
+                    break
                 }  else {
                     withAnimation { userFound = false }
                 }
